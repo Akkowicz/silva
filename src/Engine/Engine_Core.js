@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 // Operate in Strict mode
 const gEngine = gEngine || {};
 // initialize the variable while ensuring it is not redefined
@@ -15,9 +15,9 @@ gEngine.Core = (function () {
         const canvas = document.getElementById(htmlCanvasID);
         // Get the standard or experimental webgl and binds to the Canvas area
         // store the results to the instance variable mGL
-        mGL = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+        mGL = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
         if (mGL === null) {
-            document.write("<br><b>WebGL is not supported!</b>");
+            document.write('<br><b>WebGL is not supported!</b>');
             return;
         }
         // now initialize the VertexBuffer

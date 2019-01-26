@@ -18,12 +18,12 @@ function SimpleShader(vertexShaderID, fragmentShaderID) {
     gl.linkProgram(this.mCompiledShader);
     // Step C: check for error
     if (!gl.getProgramParameter(this.mCompiledShader, gl.LINK_STATUS)) {
-        alert("Error linking shader");
+        alert('Error linking shader');
         return null;
     }
     // Step D: Gets a reference to the aSquareVertexPosition attribute
     this.mShaderVertexPositionAttribute = gl.getAttribLocation(this.mCompiledShader,
-        "aSquareVertexPosition");
+        'aSquareVertexPosition');
     // Step E: Activates the vertex buffer loaded in Engine.Core_VertexBuffer
     gl.bindBuffer(gl.ARRAY_BUFFER, gEngine.VertexBuffer.getGLVertexRef());
     /// Step F: Describe the characteristic of the vertex position attribute
@@ -52,7 +52,7 @@ SimpleShader.prototype._loadAndCompileShader = function (id, shaderType) {
     // The log info is how shader compilation errors are typically displayed.
     // This is useful for debugging the shaders.
     if (!gl.getShaderParameter(compiledShader, gl.COMPILE_STATUS)) {
-        alert("A shader compiling error occurred: " +
+        alert('A shader compiling error occurred: ' +
             gl.getShaderInfoLog(compiledShader));
     }
     return compiledShader;
